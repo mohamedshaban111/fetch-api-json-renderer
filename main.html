@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <style></style>
+  </head>
+  <body>
+    <script>
+      fetch("https://api.github.com/users/elzerowebschool/repos")
+        .then((all_Response) => {
+          console.log(all_Response);
+          return all_Response;
+        })
+        .then((res) => {
+          return res;
+          console.log(res);
+        })
+        .then((res) => {
+          let pro = res.json();
+          console.log(pro);
+          return pro;
+        }) // Parse response as JSON1
+        .then((json_Content) => console.log(json_Content))
+        .then((data) => {
+          console.log(data); // Check what's inside
+          document.getElementById("image").src = data.url; // Set image src
+        })
+        .catch((err) => console.error("Error:", err)); // Catch errors
+    </script>
+
+    <script src="add.js"></script>
+  </body>
+</html>
