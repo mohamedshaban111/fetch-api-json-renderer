@@ -24,11 +24,8 @@
           return pro;
         }) // Parse response as JSON1
         .then((json_Content) => console.log(json_Content))
-        .then((data) => {
-          console.log(data); // Check what's inside
-          document.getElementById("image").src = data.url; // Set image src
-        })
-        .catch((err) => console.error("Error:", err)); // Catch errors
+        .catch((err) => console.error("Error:", err)) // Catch errors
+        .finally(() => console.log("Fetch operation completed.")); // Finally block
     </script>
 
     <script src="add.js"></script>
